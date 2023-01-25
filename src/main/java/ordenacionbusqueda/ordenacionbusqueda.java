@@ -69,6 +69,13 @@ public class ordenacionbusqueda {
 //        Collections.sort(paises, (p1,p2) -> Long.compare(p1.getPoblacion(), p2.getPoblacion()));
         
         paises.forEach(System.out::println);
+        
+        
+        //ORDENADA POR NOMBLE despues por poblacion
+        Comparator<pais> criterioNOmbre = (p1,p2) -> p1.getNombre().compareToIgnoreCase(p2.getNombre());
+        
+        
+        Collections.sort(paises, criterioNOmbre.thenComparing(criterioPoblacion));
     }
 
 }
