@@ -5,6 +5,9 @@
 package ordenacionbusqueda;
 
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 /**
@@ -28,9 +31,44 @@ public class ordenacionbusqueda {
         
         
         paises.forEach(System.out::println);
-        //Ordenar por moneda
         
-
+        
+        //Collection: 
+        
+        
+            //Ordenaciones (sort)
+            
+                //implementacion <<Comparable>>
+                
+                //<<Comparator>>
+                
+                
+            //Busqueda (binarySearch)
+            
+                //implementacion <<Comparable>>
+                
+                //<<Comparator>>
+                
+                
+        
+        //Ordenar por moneda
+        //Ordenacion usando orden natural , requiere que pais(la clase) implemente comparatos
+        Collections.sort(paises);
+        
+        System.out.println("");
+        paises.forEach(System.out::println);
+        System.out.println("");
+        
+        
+        //Operacion con comparator proporcionamos el criterio mediante una lambda
+        //Comparar y ordenar los pais por poblacion 
+        Comparator<pais> criterioPoblacion = (p1,p2) -> Long.compare(p1.getPoblacion(), p2.getPoblacion());
+        
+        Collections.sort(paises,criterioPoblacion.reversed()); //lo ordenada al reves
+        
+//        Collections.sort(paises, (p1,p2) -> Long.compare(p1.getPoblacion(), p2.getPoblacion()));
+        
+        paises.forEach(System.out::println);
     }
 
 }

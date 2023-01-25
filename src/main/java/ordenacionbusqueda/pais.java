@@ -96,9 +96,9 @@ public class pais implements Comparable<pais>{
         return sb.toString();
     }
 
-    @Override
+    @Override //ESTA WASHIWOWEA HAY QUE EDITARLA CON EL RETURN
     public int compareTo(pais o) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+      return this.nombre.compareToIgnoreCase(o.nombre);
     }
     
     
